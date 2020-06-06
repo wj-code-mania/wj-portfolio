@@ -14,10 +14,22 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "standard",
+    "lint-fix": "standard --fix",
+    "format": "prettier --check 'src/**/*.{html,css,scss,json,md}'",
+    "format-fix": "prettier --write 'src/**/*.{html,css,scss,json,md}'",
+    "format-lint-fix": "prettier --write 'src/**/*.{html,css,scss,json,md}' && standard --fix"
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "standard": {
+    "env": [
+      "jest",
+      "es6",
+      "browser"
+    ]
   },
   "browserslist": {
     "production": [
@@ -30,5 +42,20 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "standard": "^14.3.3",
+    "husky": "^4.2.2",
+    "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": "standard --fix",
+    "*.{html,css,scss,json,md}": "prettier --write"
   }
 }
