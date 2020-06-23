@@ -1,17 +1,16 @@
 import React from 'react'
-import logo from './logo.svg'
-import './App.css'
+import Layout from './Components/Layout/Layout'
+import AppHeader from './Components/AppHeader/AppHeader'
+import AppFooter from './Components/AppFooter/AppFooter'
+import ContentRouter from './Components/ContentRouter/ContentRouter'
 
 function App () {
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-      </header>
-    </div>
+    <Layout
+      header={<AppHeader />}
+      content={<ContentRouter />}
+      footer={<AppFooter />}
+    />
   )
 }
 
