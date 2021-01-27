@@ -1,10 +1,11 @@
 import React from 'react'
+import './css/main-page.css'
 
 const MainPage = () => {
   return (
-    <div>
+    <main>
       MainPage
-    </div>
+    </main>
   )
 }
 
